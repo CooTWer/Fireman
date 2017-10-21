@@ -57,3 +57,6 @@ buck-out/
 .gitattributes
 .watchmanconfig
 yarn.lock
+ios
+android
+__tests__
