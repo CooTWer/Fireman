@@ -1,4 +1,3 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
-
-AppRegistry.registerComponent('FiremanMobile', () => App);
+import CompanyList from './src/CompanyList';
+AppRegistry.registerComponent('FiremanMobile', () => CompanyList);
