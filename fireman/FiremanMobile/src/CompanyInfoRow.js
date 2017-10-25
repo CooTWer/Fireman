@@ -20,13 +20,30 @@ const styles = StyleSheet.create({
     }
 });
 
-const CompanyInfoRow = (props) => (
-    <View style={styles.container}>
-        <Image source={{uri: props.picture.large}} style={styles.photo} />
-        <Text style={styles.text}>
-            {`${props.name.first} ${props.name.last}`}
-        </Text>
-    </View>
-);
+class CompanyInfoRow extends React.Component {
+    constructor(props){
+        super(props);
+        this._navigateToDetailPage = this._navigateToDetailPage.bind(this);
+    }
+
+    render(){
+        return(
+            <View style={styles.container}>
+                <Image source={{uri: this.props.details.picture.large}} style={styles.photo} />
+                <Text style={styles.text} onPress={()=> {
+                    console.log('ccc');
+                    this._navigateToDetailPage();
+                }}>
+                    {`${this.props.details.name.first} ${this.props.details.name.last}`}
+                </Text>
+            </View>
+        );
+    }
+
+    _navigateToDetailPage(){
+        this.props.navigate('Detail');
+    }
+}
+
 
 export default CompanyInfoRow;

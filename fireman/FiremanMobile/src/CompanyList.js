@@ -1,8 +1,5 @@
-/**
- * Created by zryu on 10/21/17.
- */
-import React, {Component} from 'react';
-import {View, Text, ListView, StyleSheet} from 'react-native';
+import React, {Component, PropTypes} from 'react';
+import {View, Text, ListView, StyleSheet, TouchableHighlight} from 'react-native';
 import {Button} from 'react-native-elements';
 import { List, ListItem } from 'react-native-elements';
 import CompanyInfoRow from './CompanyInfoRow';
@@ -23,8 +20,12 @@ const styles = StyleSheet.create({
 
 
 export default class CompanyList extends React.Component{
-    constructor(props){
-        super(props);
+
+    static navigationOptions = {
+        title: 'PeopleList'
+    };
+    constructor(props, context){
+        super(props, context);
 
         const ds = new ListView.DataSource({rowHasChanged:(r1, r2)=> r1 !== r2});
         this.state = {
@@ -33,14 +34,33 @@ export default class CompanyList extends React.Component{
             ),
         };
     }
+
+    _renderRow(rowData,navigate) {
+        return (
+                    <CompanyInfoRow details={rowData} navigate={navigate}/>
+        );
+    }
+
     render(){
+        const { navigate } = this.props.navigation;
+        console.log('bbb');
         return(
+
             <ListView
                 style={styles.container}
                 dataSource={this.state.datasource}
-                renderRow={(data) => <CompanyInfoRow {...data}/>}
-                renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+                renderRow={(rowData) => this._renderRow(rowData,navigate)}
+                renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator}/>}
             />
         );
     }
+
+
 }
+
+// export default class rootNavigate extends React.Component{
+//     render(){
+//         return <SimpleApp/>
+//     }
+// }
+
