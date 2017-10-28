@@ -1,12 +1,33 @@
-import { AppRegistry } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import CompanyList from './src/Components/ScreenComponent/CompanyListComponent/CompanyList';
-import CarouselSnap from './src/Components/UtilsComponent/CarouselComponent/CarouselSnap';
-import CompanyDetail from './src/Components/ScreenComponent/DetailComponent/CompanyDetail';
+import {AppRegistry} from 'react-native';
+import {StackNavigator} from 'react-navigation';
+import CompanyList from './src/CompanyList';
+import CarouselSnap from './src/Components/CarouselComponent/CarouselSnap';
+import CompanyDetail from './src/CompanyDetail';
 
 export const SimpleApp = StackNavigator({
-    Home: {screen: CompanyList},
-    Detail: {screen: CarouselSnap},
-    CompanyDetail: {screen: CompanyDetail}
-});
+        Home: {screen: CompanyList},
+        Detail: {screen: CarouselSnap},
+        CompanyDetail: {screen: CompanyDetail},
+    }, {
+        initialRouteName: 'Home',
+        navigationOptions: {
+            headerStyle: {
+                height: 30,
+                backgroundColor: '#fff'
+            },
+            headerTitleStyle: {
+                height: 30,
+                fontSize: 15,
+                // backgroundColor: '#000000',
+                paddingBottom: 10
+            },
+            cardStack: {
+                gesturesEnabled: true
+            }
+        },
+        mode: 'card',
+        headerMode: 'screen'
+    }
+);
+
 AppRegistry.registerComponent('FiremanMobile', () => SimpleApp);
