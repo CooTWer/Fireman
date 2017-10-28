@@ -41,7 +41,7 @@ class CompanyInfoRow extends React.Component {
     }
 
     _navigateToDetailPage(){
-        this.props.navigate('Detail');
+        this.props.navigate('CompanyDetail');
     }
 }
 

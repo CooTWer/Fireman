@@ -43,7 +43,6 @@ export default class CompanyList extends React.Component{
 
     render(){
         const { navigate } = this.props.navigation;
-        console.log('bbb');
         return(
 
             <ListView

@@ -1,33 +1,38 @@
 import React, {Component} from 'react';
 import {ScrollView, View, Text, Image, TextInput, StyleSheet} from 'react-native';
-import {Icon} from 'react-native-elements'
 import CompanyList from './CompanyList';
-import ScrollableTabView, {ScrollableTabBar, DefaultTabBar} from 'react-native-scrollable-tab-view';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+import Tabs from './Components/Tabs';
 
 export default class CompanyDetail extends React.Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
             companyList: CompanyList,
-            companyDetail: companyDetail,
             text: null,
-            tabNames: ['详情', '设施', 'Tab3', 'Tab4'],
-            tabIconNames: ['ios-paper', 'ios-albums', 'ios-paper-plane', 'ios-person-add'],
         };
     }
 
-    renderIconAndText(text, iconName) {
-        return (
-            <View>
-                <Icon name={iconName}/>
-                <Text>{text}</Text>
-            </View>
-        );
-    }
-
     render() {
+        const tabsInfo = [
+            {
+                tabNames: '详情',
+                tabIconName: 'ios-paper'
+            },
+            {
+                tabNames: '设施',
+                tabIconName: 'ios-albums'
+            },
+            {
+                tabNames: '记录',
+                tabIconName: 'ios-paper-plane'
+            },
+            {
+                tabNames: '其他',
+                tabIconName: 'ios-person-add'
+            }
+        ];
         return (
             <ScrollView style={styles.base}>
                 <Image
@@ -45,35 +50,20 @@ export default class CompanyDetail extends React.Component {
 
                 <ScrollableTabView
                     initialPage={0}
-                    renderTabBar={() => <ScrollableTabBar/>}
-                    tabBarPosition='top'
+                    renderTabBar={() => <Tabs tabsInfo={tabsInfo}/>}
+                    // tabBarPosition='top'
                 >
-                    <View tabLabel='详情'>
-                        <Icon name='description'/>
-                        <Text>详情</Text>
+                    <View style={styles.content} tabLabel='key1'>
+                        <Text>#1</Text>
                     </View>
-                    <View tabLabel='设施'>
-                        <Icon name='build'/>
-                        <Text>设施</Text>
+                    <View style={styles.content} tabLabel='key2'>
+                        <Text>#2</Text>
                     </View>
-                    <View tabLabel='责任人'>
-                        <Icon name='people'/>
-                        <Text>责任人</Text>
+                    <View style={styles.content} tabLabel='key3'>
+                        <Text>#3</Text>
                     </View>
-                    <View tabLabel='其他'>
-                        <Icon name='people'/>
-                        <Text>责任人</Text>
-                    </View>
-                    <View tabLabel='其他'>
-                        <Icon name='people'/>
-                        <Text>责任人</Text>
-                    </View>
-                    <View tabLabel='其他'>
-                        <Icon name='people'/>
-                        <Text>责任人</Text>
-                    </View>
-                    <View tabLabel='其他'>
-                        <Text></Text>
+                    <View style={styles.content} tabLabel='key4'>
+                        <Text>#4</Text>
                     </View>
                 </ScrollableTabView>
             </ScrollView>
