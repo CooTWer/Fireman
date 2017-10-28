@@ -3,7 +3,7 @@ import {View, Text, ListView, StyleSheet, TouchableHighlight} from 'react-native
 import {Button} from 'react-native-elements';
 import { List, ListItem } from 'react-native-elements';
 import CompanyInfoRow from './CompanyInfoRow';
-import companyData from '../../Data';
+import companyData from '../../../Statics/MockData/Data';
 
 const styles = StyleSheet.create({
    container: {

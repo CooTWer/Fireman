@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {ScrollView, View, Text, Image, TextInput, StyleSheet} from 'react-native';
-import CompanyList from './CompanyList';
+import CompanyList from '../CompanyListComponent/CompanyList';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
-import Tabs from './Components/Tabs';
+import Tabs from '../../UtilsComponent/TabsComponent/Tabs';
 
 export default class CompanyDetail extends React.Component {
     constructor(props) {

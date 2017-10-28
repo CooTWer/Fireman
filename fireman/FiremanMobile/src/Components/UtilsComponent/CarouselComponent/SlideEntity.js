@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { ParallaxImage } from 'react-native-snap-carousel';
 import PropTypes from 'prop-types';
-import styles from '../../Styles/SlideEntity.Style';
+import styles from '../../../Styles/SlideEntity.Style';
 
 export default class SlideEntity extends Component{
     static propTypes = {
@@ -16,7 +16,7 @@ export default class SlideEntity extends Component{
         const { data: { illustration }, parallax, parallaxProps, even } = this.props;
         return parallax ? (
             <ParallaxImage
-                source={require('../../Statics/0001095.jpg')}
+                source={require('../../../Statics/Pictures/0001095.jpg')}
                 containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
                 style={[styles.image, { position: 'relative' }]}
                 parallaxFactor={0.35}

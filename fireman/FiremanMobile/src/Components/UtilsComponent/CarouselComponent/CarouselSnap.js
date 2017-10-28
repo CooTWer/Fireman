@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { View, ScrollView, Text, StatusBar } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import {CAROUSEL_ENTITY} from '../../Statics/Slides';
-import styles, {colors} from '../../Styles/Carousel.Styles';
-import { sliderWidth, itemWidth } from '../../Styles/SlideEntity.Style';
+import {CAROUSEL_ENTITY} from '../../../Statics/MockData/Slides';
+import styles, {colors} from '../../../Styles/Carousel.Styles';
+import { sliderWidth, itemWidth } from '../../../Styles/SlideEntity.Style';
 import SlideEntity from './SlideEntity'
 
 const SLIDE_FIRST_ITEM = 1;
