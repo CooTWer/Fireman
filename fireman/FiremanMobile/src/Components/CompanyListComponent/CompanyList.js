@@ -3,7 +3,7 @@ import {View, Text, ListView, StyleSheet, TouchableHighlight} from 'react-native
 import {Button} from 'react-native-elements';
 import { List, ListItem } from 'react-native-elements';
 import CompanyInfoRow from './CompanyInfoRow';
-import companyData from './Data';
+import companyData from '../../Data';
 
 const styles = StyleSheet.create({
    container: {
@@ -56,10 +56,4 @@ export default class CompanyList extends React.Component{
 
 
 }
-
-// export default class rootNavigate extends React.Component{
-//     render(){
-//         return <SimpleApp/>
-//     }
-// }
 

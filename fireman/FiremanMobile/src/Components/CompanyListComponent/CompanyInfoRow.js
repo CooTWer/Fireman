@@ -31,7 +31,6 @@ class CompanyInfoRow extends React.Component {
             <View style={styles.container}>
                 <Image source={{uri: this.props.details.picture.large}} style={styles.photo} />
                 <Text style={styles.text} onPress={()=> {
-                    console.log('ccc');
                     this._navigateToDetailPage();
                 }}>
                     {`${this.props.details.name.first} ${this.props.details.name.last}`}
@@ -41,7 +40,7 @@ class CompanyInfoRow extends React.Component {
     }
 
     _navigateToDetailPage(){
-        this.props.navigate('CompanyDetail');
+        this.props.navigate('Detail', this.props.details);
     }
 }
 

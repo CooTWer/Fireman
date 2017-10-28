@@ -14,10 +14,9 @@ export default class SlideEntity extends Component{
 
     get image () {
         const { data: { illustration }, parallax, parallaxProps, even } = this.props;
-
         return parallax ? (
             <ParallaxImage
-                source={{ uri: illustration }}
+                source={require('../../Statics/0001095.jpg')}
                 containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
                 style={[styles.image, { position: 'relative' }]}
                 parallaxFactor={0.35}

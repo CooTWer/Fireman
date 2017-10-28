@@ -1,6 +1,6 @@
 import { AppRegistry } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import CompanyList from './src/CompanyList';
+import CompanyList from './src/Components/CompanyListComponent/CompanyList';
 import CarouselSnap from './src/Components/CarouselComponent/CarouselSnap';
 import CompanyDetail from './src/CompanyDetail';
 
