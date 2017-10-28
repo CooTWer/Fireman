@@ -6,7 +6,7 @@ import CompanyDetail from './src/Components/ScreenComponent/DetailComponent/Comp
 
 export const SimpleApp = StackNavigator({
         Home: {screen: CompanyList},
-        Detail: {screen: CarouselSnap},
+        Detail: {screen: CompanyDetail},
         CompanyDetail: {screen: CompanyDetail},
     }, {
         initialRouteName: 'Home',

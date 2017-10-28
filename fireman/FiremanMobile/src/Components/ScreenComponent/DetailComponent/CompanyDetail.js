@@ -3,6 +3,7 @@ import {ScrollView, View, Text, Image, TextInput, StyleSheet} from 'react-native
 import CompanyList from '../CompanyListComponent/CompanyList';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import Tabs from '../../UtilsComponent/TabsComponent/Tabs';
+import CarouselSnap from '../../UtilsComponent/CarouselComponent/CarouselSnap';
 
 export default class CompanyDetail extends React.Component {
     constructor(props) {
@@ -35,14 +36,13 @@ export default class CompanyDetail extends React.Component {
         ];
         return (
             <ScrollView>
-                <Image
-                    source={{uri: "/Users/rhuan/Downloads/83I58PICBzd.jpg"}}
-                    style={{width: 320, height: 220}}/>
+
                 {/*<TextInput*/}
                 {/*style={{height: 40, borderColor: 'gray', borderWidth: 1}}*/}
                 {/*onChangeText={(text) => this.setState({text})}*/}
                 {/*placeholder={"Where do you want to go?...."}*/}
                 {/*value={this.state.text}/>*/}
+                <CarouselSnap />
                 <View style={styles.titleName}>
                     <Text style={styles.locationName}>通州消防局（地名）</Text>
                     <Text style={styles.cellPhone}>电话: 010-88888888</Text>
