@@ -34,7 +34,7 @@ export default class CompanyDetail extends React.Component {
             }
         ];
         return (
-            <ScrollView >
+            <ScrollView>
                 <Image
                     source={{uri: "/Users/rhuan/Downloads/83I58PICBzd.jpg"}}
                     style={{width: 320, height: 220}}/>
@@ -50,7 +50,6 @@ export default class CompanyDetail extends React.Component {
 
                 <ScrollableTabView
                     initialPage={0}
-                    tabBarPosition='bottom'
                     renderTabBar={() => <Tabs tabsInfo={tabsInfo}/>}
                 >
                     <View style={styles.content} tabLabel='key1'>
