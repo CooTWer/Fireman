@@ -34,7 +34,7 @@ export default class CompanyDetail extends React.Component {
             }
         ];
         return (
-            <ScrollView style={styles.base}>
+            <ScrollView >
                 <Image
                     source={{uri: "/Users/rhuan/Downloads/83I58PICBzd.jpg"}}
                     style={{width: 320, height: 220}}/>
@@ -50,8 +50,8 @@ export default class CompanyDetail extends React.Component {
 
                 <ScrollableTabView
                     initialPage={0}
+                    tabBarPosition='bottom'
                     renderTabBar={() => <Tabs tabsInfo={tabsInfo}/>}
-                    // tabBarPosition='top'
                 >
                     <View style={styles.content} tabLabel='key1'>
                         <Text>#1</Text>
@@ -72,22 +72,6 @@ export default class CompanyDetail extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    base: {
-        // backgroundColor: '#eeeeee',
-    },
-    iconBar: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 5,
-        paddingTop: 5,
-        paddingLeft: 40,
-        paddingBottom: 10,
-        paddingRight: 40,
-        borderTopColor: '#eeeeee',
-        borderTopWidth: 2,
-        // backgroundColor: '#ffffff',
-    },
     titleName: {
         paddingTop: 15,
         paddingLeft: 20,

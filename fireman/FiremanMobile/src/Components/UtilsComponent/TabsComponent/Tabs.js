@@ -17,9 +17,9 @@ export default class Tabs extends React.Component{
     }
 
     renderTabOption(tab, i) {
-        const color = this.props.activeTab == i? "#6B8E23" : "#ADADAD"; // 判断i是否是当前选中的tab，设置不同的颜色
+        const color = this.props.activeTab === i ? "#6B8E23" : "#ADADAD"; // 判断i是否是当前选中的tab，设置不同的颜色
         return (
-            <TouchableOpacity onPress={()=>this.props.goToPage(i)} style={styles.tab}>
+            <TouchableOpacity key={i} onPress={()=>this.props.goToPage(i)} style={styles.tab}>
                 <View style={styles.tabItem}>
                     <Icon
                         name={this.props.tabsInfo[i].tabIconName}  // 图标
@@ -43,6 +43,16 @@ export default class Tabs extends React.Component{
 }
 
 const styles = StyleSheet.create({
+    tabs: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderTopColor: '#6B8E23',
+        borderTopWidth: 4,
+        marginBottom: 10
+    },
     tabItem: {
 
     },
