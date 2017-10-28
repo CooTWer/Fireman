@@ -1,10 +1,11 @@
 import { AppRegistry } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import CompanyList from './src/CompanyList';
-import CompanyDetail from './src/CompanyDetail';
+import CarouselSnap from './src/Components/CarouselComponent/CarouselSnap';
+// import CompanyDetail from './src/CompanyDetail';
 
 export const SimpleApp = StackNavigator({
     Home: {screen: CompanyList},
-    Detail: {screen: CompanyDetail}
+    Detail: {screen: CarouselSnap}
 });
 AppRegistry.registerComponent('FiremanMobile', () => SimpleApp);
