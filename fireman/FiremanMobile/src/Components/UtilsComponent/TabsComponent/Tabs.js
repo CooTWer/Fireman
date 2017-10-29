@@ -35,7 +35,7 @@ export default class Tabs extends React.Component{
 
     render() {
         return (
-            <View style={styles.tabs}>
+            <View style={styles.tabsOptionContainer}>
                 {this.props.tabs.map((tab, i) => this.renderTabOption(tab, i))}
             </View>
         );
@@ -43,7 +43,7 @@ export default class Tabs extends React.Component{
 }
 
 const styles = StyleSheet.create({
-    tabs: {
+    tabsOptionContainer: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
