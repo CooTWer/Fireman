@@ -44,7 +44,6 @@ export default class Tabs extends React.Component{
 
 const styles = StyleSheet.create({
     tabsOptionContainer: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingLeft: 10,

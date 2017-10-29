@@ -4,21 +4,17 @@ import CompanyList from '../CompanyListComponent/CompanyList';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import Tabs from '../../UtilsComponent/TabsComponent/Tabs';
 import CarouselSnap from '../../UtilsComponent/CarouselComponent/CarouselSnap';
+import DetailData from '../../../Statics/MockData/DetailData';
+import BasicInfo from '../../UtilsComponent/TabsComponent/BasicInfo';
+import PropTypes from 'prop-types';
 
 export default class CompanyDetail extends React.Component {
     constructor(props) {
         super(props);
-        const {address, id, picture} = this.props.navigation.state.params;
         this.state = {
             companyList: CompanyList,
-            text: null
+            companyDetail: DetailData
         };
-        this.props = {
-            address : address,
-            id : id,
-            picture : picture
-        };
-        console.log('address: '+this.props.address);
     }
 
     render() {
@@ -51,11 +47,10 @@ export default class CompanyDetail extends React.Component {
 
                 <ScrollableTabView
                     initialPage={0}
+                    tabBarPosition="top"
                     renderTabBar={() => <Tabs tabsInfo={tabsInfo}/>}
                 >
-                    <View style={styles.content} tabLabel='key1'>
-                        <Text>#1</Text>
-                    </View>
+                    <BasicInfo basicInfo={this.state.companyDetail.basicInfo}/>
                     <View style={styles.content} tabLabel='key2'>
                         <Text>#2</Text>
                     </View>
