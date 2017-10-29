@@ -8,7 +8,6 @@ import companyData from '../../../Statics/MockData/Data';
 const styles = StyleSheet.create({
    container: {
        flex: 1,
-       marginTop: 20
    },
 
     separator: {

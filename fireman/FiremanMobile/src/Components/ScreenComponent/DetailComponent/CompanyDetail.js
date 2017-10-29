@@ -6,7 +6,7 @@ import Tabs from '../../UtilsComponent/TabsComponent/Tabs';
 import CarouselSnap from '../../UtilsComponent/CarouselComponent/CarouselSnap';
 import DetailData from '../../../Statics/MockData/DetailData';
 import BasicInfo from '../../UtilsComponent/TabsComponent/BasicInfo';
-import PropTypes from 'prop-types';
+import KeyPositionInfo from '../../UtilsComponent/TabsComponent/KeyPositionInfo';
 
 export default class CompanyDetail extends React.Component {
     constructor(props) {
@@ -50,7 +50,10 @@ export default class CompanyDetail extends React.Component {
                     tabBarPosition="top"
                     renderTabBar={() => <Tabs tabsInfo={tabsInfo}/>}
                 >
-                    <BasicInfo basicInfo={this.state.companyDetail.basicInfo}/>
+                    <View style={styles.content} tabLabel='key1'>
+                        <BasicInfo basicInfo={this.state.companyDetail.basicInfo} />
+                        <KeyPositionInfo positionArray={this.state.companyDetail.keyPosition} />
+                    </View>
                     <View style={styles.content} tabLabel='key2'>
                         <Text>#2</Text>
                     </View>
