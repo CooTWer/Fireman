@@ -7,6 +7,7 @@ import CarouselSnap from '../../UtilsComponent/CarouselComponent/CarouselSnap';
 import DetailData from '../../../Statics/MockData/DetailData';
 import BasicInfo from '../../UtilsComponent/TabsComponent/BasicInfo';
 import KeyPositionInfo from '../../UtilsComponent/TabsComponent/KeyPositionInfo';
+import ImageTab from '../../UtilsComponent/TabsComponent/ImageTab';
 
 export default class CompanyDetail extends React.Component {
     constructor(props) {
@@ -61,7 +62,7 @@ export default class CompanyDetail extends React.Component {
                         <Text>#3</Text>
                     </View>
                     <View style={styles.content} tabLabel='key4'>
-                        <Text>#4</Text>
+                        <ImageTab/>
                     </View>
                 </ScrollableTabView>
             </ScrollView>
@@ -85,4 +86,7 @@ const styles = StyleSheet.create({
     bottom: {
         marginBottom: 10,
     },
+    content: {
+        height: 1000,
+    }
 });
