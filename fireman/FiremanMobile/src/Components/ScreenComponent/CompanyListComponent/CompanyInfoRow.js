@@ -33,7 +33,7 @@ class CompanyInfoRow extends React.Component {
                 <Text style={styles.text} onPress={()=> {
                     this._navigateToDetailPage();
                 }}>
-                    {`${this.props.details.name.first} ${this.props.details.name.last}`}
+                    {`${this.props.details.address}`}
                 </Text>
             </View>
         );

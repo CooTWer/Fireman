@@ -8,11 +8,17 @@ import CarouselSnap from '../../UtilsComponent/CarouselComponent/CarouselSnap';
 export default class CompanyDetail extends React.Component {
     constructor(props) {
         super(props);
-
+        const {address, id, picture} = this.props.navigation.state.params;
         this.state = {
             companyList: CompanyList,
-            text: null,
+            text: null
         };
+        this.props = {
+            address : address,
+            id : id,
+            picture : picture
+        };
+        console.log('address: '+this.props.address);
     }
 
     render() {
@@ -36,15 +42,10 @@ export default class CompanyDetail extends React.Component {
         ];
         return (
             <ScrollView>
-
-                {/*<TextInput*/}
-                {/*style={{height: 40, borderColor: 'gray', borderWidth: 1}}*/}
-                {/*onChangeText={(text) => this.setState({text})}*/}
-                {/*placeholder={"Where do you want to go?...."}*/}
-                {/*value={this.state.text}/>*/}
-                <CarouselSnap />
+                {console.log(this.props.navigation.state.params.address)}
+                <CarouselSnap navigation={this.props.navigation} />
                 <View style={styles.titleName}>
-                    <Text style={styles.locationName}>通州消防局（地名）</Text>
+                    <Text style={styles.locationName}>{this.props.navigation.state.params.address}（地名）</Text>
                     <Text style={styles.cellPhone}>电话: 010-88888888</Text>
                 </View>
 

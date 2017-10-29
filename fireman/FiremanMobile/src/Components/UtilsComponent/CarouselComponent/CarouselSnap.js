@@ -12,8 +12,9 @@ export default class CarouselSnap extends Component{
 
     constructor (props){
         super(props);
-        // const { gender } = this.props.navigation.state.params;
-        // console.log('gender: '+gender);
+
+        const {gender, name, location} = this.props.navigation.state.params;
+        console.log('gender: '+ gender);
         this.state = {
             slider1ActiveSlide: SLIDE_FIRST_ITEM,
             slider1Ref: null
