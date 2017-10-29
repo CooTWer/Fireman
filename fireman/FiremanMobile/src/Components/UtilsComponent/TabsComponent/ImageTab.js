@@ -27,14 +27,24 @@ export default class ImageTab extends Component{
     render(){
         return(
             <ScrollView style={styles.container}>
-                <Lightbox springConfig={{tension: 15, friction: 7}} swipeToDismiss={false} renderContent={renderCarousel}>
-                    <Text>消防水源图</Text>
-                    <Image
-                        style={styles.carousel}
-                        resizeMode="contain"
-                        source={require('../../../Statics/Pictures/0001095.jpg')}
-                    />
-                </Lightbox>
+                <View style={styles.row}>
+                    <Lightbox style={styles.col} springConfig={{tension: 15, friction: 7}} swipeToDismiss={false} renderContent={renderCarousel}>
+                            <Text>消防水源图</Text>
+                            <Image
+                                style={styles.carousel}
+                                resizeMode="contain"
+                                source={require('../../../Statics/Pictures/0001095.jpg')}
+                            />
+                    </Lightbox>
+                    <Lightbox style={styles.col} springConfig={{tension: 15, friction: 7}} swipeToDismiss={false} renderContent={renderCarousel}>
+                        <Text>灭火救援图</Text>
+                        <Image
+                            style={styles.carousel}
+                            resizeMode="contain"
+                            source={require('../../../Statics/Pictures/beach.jpeg')}
+                        />
+                    </Lightbox>
+                </View>
             </ScrollView>
         );
     }
