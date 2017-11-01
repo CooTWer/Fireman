@@ -14,7 +14,6 @@ export default class CompanyDetail extends React.Component {
         super(props);
         this.state = {
             companyList: CompanyList,
-            companyDetail: DetailData
         };
     }
 
@@ -37,12 +36,12 @@ export default class CompanyDetail extends React.Component {
                 tabIconName: 'ios-person-add'
             }
         ];
+        const companyDetail = this.props.navigation.state.params;
         return (
             <ScrollView>
-                {console.log(this.props.navigation.state.params.address)}
                 <CarouselSnap navigation={this.props.navigation} />
                 <View style={styles.titleName}>
-                    <Text style={styles.locationName}>{this.props.navigation.state.params.address}（地名）</Text>
+                    <Text style={styles.locationName}>{companyDetail.address}（地名）</Text>
                     <Text style={styles.cellPhone}>电话: 010-88888888</Text>
                 </View>
 
@@ -52,8 +51,8 @@ export default class CompanyDetail extends React.Component {
                     renderTabBar={() => <Tabs tabsInfo={tabsInfo}/>}
                 >
                     <View style={styles.content} tabLabel='key1'>
-                        <BasicInfo basicInfo={this.state.companyDetail.basicInfo} />
-                        <KeyPositionInfo positionArray={this.state.companyDetail.keyPosition} />
+                        {companyDetail.basicInfo && <BasicInfo basicInfo={companyDetail.basicInfo} />}
+                        {companyDetail.keyPosition && <KeyPositionInfo positionArray={companyDetail.keyPosition} />}
                     </View>
                     <View style={styles.content} tabLabel='key2'>
                         <Text>#2</Text>

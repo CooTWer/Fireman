@@ -13,7 +13,6 @@ class KeyPositionInfo extends React.Component {
     };
 
     renderOnePosition(keyPosition, i) {
-        console.log("keyPosition", keyPosition);
         return (
             <View key={i} style={styles.container}>
                 <Text>重点部位名称：{keyPosition.name} </Text>
@@ -28,7 +27,7 @@ class KeyPositionInfo extends React.Component {
     render() {
         return (
             <View>
-                { this.props.positionArray.map((keyPosition, i) => this.renderOnePosition(keyPosition, i)) }
+                {this.props.positionArray.map((keyPosition, i) => this.renderOnePosition(keyPosition, i))}
             </View>
         )
     };
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
         borderColor: 'red',
         borderWidth: 1,
         borderRadius: 10,
-        backgroundColor:'#ffffff',
+        backgroundColor: '#ffffff',
     },
 });
 
