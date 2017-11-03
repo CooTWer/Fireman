@@ -2,6 +2,7 @@ import {AppRegistry} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import CompanyList from './src/Components/ScreenComponent/CompanyListComponent/CompanyList';
 import CompanyDetail from './src/Components/ScreenComponent/DetailComponent/CompanyDetail';
+// import PrimaryDevice from './src/Components/UtilsComponent/TabsComponent/PrimaryDevice';
 
 export const SimpleApp = StackNavigator({
         Home: {screen: CompanyList},

@@ -36,11 +36,10 @@ export default detailData = {
                 location: null
             }
         },
-        alertSystem: {
-            automaticSprinklerSystem: true,
-            emergencyBroadcastSystem: true,
-            smokePreventionSystem: true
-        },
+        automaticAlertSystem: true,
+        automaticSprinklerSystem: true,
+        emergencyBroadcastSystem: true,
+        smokePreventionSystem: true,
         outdoorFireHydrant: {
             Number: '5',
             location: null

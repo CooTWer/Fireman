@@ -8,6 +8,7 @@ import DetailData from '../../../Statics/MockData/DetailData';
 import BasicInfo from '../../UtilsComponent/TabsComponent/BasicInfo';
 import KeyPositionInfo from '../../UtilsComponent/TabsComponent/KeyPositionInfo';
 import ImageTab from '../../UtilsComponent/TabsComponent/ImageTab';
+import PrimaryDevice from '../../UtilsComponent/TabsComponent/PrimaryDevice';
 
 export default class CompanyDetail extends React.Component {
     constructor(props) {
@@ -55,7 +56,7 @@ export default class CompanyDetail extends React.Component {
                         {companyDetail.keyPosition && <KeyPositionInfo positionArray={companyDetail.keyPosition} />}
                     </View>
                     <View style={styles.content} tabLabel='key2'>
-                        <Text>#2</Text>
+                        <PrimaryDevice devicesInfo={this.state.companyDetail.fireFightingDevice}/>
                     </View>
                     <View style={styles.content} tabLabel='key3'>
                         <Text>#3</Text>
