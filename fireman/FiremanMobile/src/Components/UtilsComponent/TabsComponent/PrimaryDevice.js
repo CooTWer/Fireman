@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import { Card, ListItem, Button, Divider } from 'react-native-elements';
+import { Card, ListItem, Button, Divider, CheckBox } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 
@@ -20,6 +20,37 @@ export default  class PrimaryDevice extends Component{
                     <Text>位置: {this.props.devicesInfo.fireControlRoomLocation}</Text>
                 </Card>
                 <Card title='消防水源'>
+                    <View style={styles.poolView}>
+                        <Text style={styles.poolText}>消防水池数量: {this.props.devicesInfo.water.firePool.number}</Text>
+                        <Text style={styles.poolText}>位置:  {this.props.devicesInfo.water.firePool.location}</Text>
+                        <Text style={styles.poolText}>总容量:  {this.props.devicesInfo.water.firePool.capacity}</Text>
+                        <Text style={styles.poolText}>补给方式:  {this.props.devicesInfo.water.firePool.supplyWay}</Text>
+                    </View>
+                    <Divider style={styles.divider} />
+                    <View style={styles.poolView}>
+                        <Text style={styles.poolText}>室外其他水源: {this.props.devicesInfo.water.outdoorSource.description}</Text>
+                        <Text style={styles.poolText}>位置:  {this.props.devicesInfo.water.outdoorSource.location}</Text>
+                    </View>
+                </Card>
+                <Card>
+                    <CheckBox
+                        title='自动报警系统'
+                        checked={this.props.devicesInfo.alertSystem.autoAlertSystem}
+                    />
+                    <CheckBox
+                        title='自动喷水系统'
+                        checked={this.props.devicesInfo.alertSystem.automaticSprinklerSystem}
+                    />
+                    <CheckBox
+                        title='应急广播系统'
+                        checked={this.props.devicesInfo.alertSystem.emergencyBroadcastSystem}
+                    />
+                    <CheckBox
+                        title='防排烟系统'
+                        checked={this.props.devicesInfo.alertSystem.smokePreventionSystem}
+                    />
+                </Card>
+                <Card title='消防泵'>
                     <View style={styles.poolView}>
                         <Text style={styles.poolText}>消防水池数量: {this.props.devicesInfo.water.firePool.number}</Text>
                         <Text style={styles.poolText}>位置:  {this.props.devicesInfo.water.firePool.location}</Text>

@@ -37,7 +37,7 @@ export default data = [
                     number: null,
                     location: null,
                     capacity: null,
-                    supplyWay: null,
+                    supplyWay: null
                 },
                 outdoorSource: {
                     description: null,
@@ -45,9 +45,10 @@ export default data = [
                 }
             },
             alertSystem: {
+                autoAlertSystem: true,
                 automaticSprinklerSystem: true,
                 emergencyBroadcastSystem: true,
-                smokePreventionSystem: true
+                smokePreventionSystem: false
             },
             outdoorFireHydrant: {
                 Number: '5',

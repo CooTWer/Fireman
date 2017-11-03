@@ -56,7 +56,7 @@ export default class CompanyDetail extends React.Component {
                         {companyDetail.keyPosition && <KeyPositionInfo positionArray={companyDetail.keyPosition} />}
                     </View>
                     <View style={styles.content} tabLabel='key2'>
-                        <PrimaryDevice devicesInfo={this.state.companyDetail.fireFightingDevice}/>
+                        <PrimaryDevice devicesInfo={companyDetail.fireFightingDevice}/>
                     </View>
                     <View style={styles.content} tabLabel='key3'>
                         <Text>#3</Text>
